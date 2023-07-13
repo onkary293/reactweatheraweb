@@ -7,7 +7,7 @@ import { useState } from "react";
 function App() {
   const [data, setData] = useState({
     celcius: "",
-    name: "London",
+    name: "City",
     humidity: 0,
     speed: 0,
     image: "/onkary293/Images/clear.png",
@@ -64,7 +64,7 @@ function App() {
           />
           <button>
             <img
-              src="/onkary293/Images/searching.png"
+              src="/Images/searching.png"
               alt="search"
               className="imgsearch"
               onClick={clickHandler}
@@ -77,14 +77,14 @@ function App() {
           <h2>{data.name}</h2>
           <div className="details">
             <div className="col">
-              <img src="/onkary293/Images/humidty.png" alt="humitdyimg" />
+              <img src="/Images/humidty.png" alt="humitdyimg" />
               <div className="humidty">
                 <p>{Math.round(data.humidity)}%</p>
                 <p>Humidity</p>
               </div>
             </div>
             <div className="col">
-              <img src="/onkary293/Images/windy.png" alt="speedimg" />
+              <img src="/Images/windy.png" alt="speedimg" />
               <div className="wind">
                 <p>{Math.round(data.speed)} km/h</p>
                 <p>Wind</p>
