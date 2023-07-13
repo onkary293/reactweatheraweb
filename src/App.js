@@ -2,7 +2,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./style.css";
 import axios from "axios";
-import { useState } from "react";
+import {useState} from "react";
+import search from "./Images/searching.png"
+import cloudy from "./Images/cloudy.png";
+import clear from "./Images/clear.png";
+import rain from "./Images/rain.png";
+import drizzle from "./Images/drizzler.png";
+import haze from "./Images/windy.png";
+import humidty from "./Images/humidty.png";
+import windy from "./Images/windy.png";
 
 function App() {
   const [data, setData] = useState({
@@ -10,7 +18,7 @@ function App() {
     name: "City",
     humidity: 0,
     speed: 0,
-    image: "/onkary293/Images/clear.png",
+    image: clear,
   });
   const [name, setName] = useState("");
   const clickHandler = () => {
@@ -21,17 +29,17 @@ function App() {
         .then((res) => {
           let imagePath = "";
           if (res.data.weather[0].main == "Clouds") {
-            imagePath = "/Images/cloudy.png";
+            imagePath = cloudy;
           } else if (res.data.weather[0].main == "Clear") {
-            imagePath = "/Images/clear.png";
+            imagePath = clear;
           } else if (res.data.weather[0].main == "Rain") {
-            imagePath = "/Images/rain.png";
+            imagePath = rain;
           } else if (res.data.weather[0].main == "Drizzle") {
-            imagePath = "/Images/drizzler.png";
+            imagePath = drizzle;
           } else if (res.data.weather[0].main == "Haze") {
-            imagePath = "/Images/mist.png";
+            imagePath = haze
           } else {
-            imagePath = "/Images/clear.jpg";
+            imagePath = clear;
           }
           console.log(res.data);
 
@@ -64,7 +72,7 @@ function App() {
           />
           <button>
             <img
-              src="/Images/searching.png"
+              src={search}
               alt="search"
               className="imgsearch"
               onClick={clickHandler}
@@ -77,14 +85,14 @@ function App() {
           <h2>{data.name}</h2>
           <div className="details">
             <div className="col">
-              <img src="/Images/humidty.png" alt="humitdyimg" />
+              <img src={humidty} alt="humitdyimg" />
               <div className="humidty">
                 <p>{Math.round(data.humidity)}%</p>
                 <p>Humidity</p>
               </div>
             </div>
             <div className="col">
-              <img src="/Images/windy.png" alt="speedimg" />
+              <img src={windy} alt="speedimg" />
               <div className="wind">
                 <p>{Math.round(data.speed)} km/h</p>
                 <p>Wind</p>
