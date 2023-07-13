@@ -7,7 +7,7 @@ import { useState } from "react";
 function App() {
   const [data, setData] = useState({
     celcius: "",
-    name: "City",
+    name: "London",
     humidity: 0,
     speed: 0,
     image: "/onkary293/Images/clear.png",
